@@ -6,12 +6,33 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
+    <link href="/dist/output.css" rel="stylesheet">
   </head>
   <body>
-    <nav>
-      <b>Home</b>
-      <b>Other page</b>
-    </nav>
+
+    <div id="sinistra" class="w-1/4 flex-col space-y-5 float-left">
+      <img class="w-100" src="https://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png" alt="">
+      <div id="galleria">
+        <div class="p-4 max-w-sm mx-auto bg-trasparent rounded-xl shadow-xl flex items-center space-x-6">
+          <img class="h-12 w-12" src="https://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png" alt="ChitChat Logo">
+          <div class="text-xl font-medium">Negozio</div>
+        </div>
+        <div class="p-4 max-w-sm mx-auto bg-trasparent rounded-xl shadow-xl flex items-center space-x-6">
+          <img class="h-12 w-12" src="https://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png" alt="ChitChat Logo">
+          <div class="text-xl font-medium">Collezione</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="destra" class="w-3/4 float-left">
+      <nav>
+        <b>Home</b>
+        <b>Other page</b>
+      </nav>
+      <div id="map"></div>
+    </div>
+
+
     <main></main>
   </body>
 </html>
