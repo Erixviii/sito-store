@@ -576,16 +576,12 @@ video {
   min-height: 100vh;
 }
 
-.w-12 {
-  width: 3rem;
+.w-auto {
+  width: auto;
 }
 
 .w-3\/4 {
   width: 75%;
-}
-
-.max-w-sm {
-  max-width: 24rem;
 }
 
 .max-w-xs {
@@ -618,10 +614,6 @@ video {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .text-xl {
@@ -659,6 +651,13 @@ nav{
 #sinistra{
   text-align: -webkit-center;
   width: 18%;
+}
+
+.imggalleria{
+  width: auto;
+  height: 35px;
+  padding-top: 5px;
+  padding-left: 15px;
 }
 
 #mappa{
