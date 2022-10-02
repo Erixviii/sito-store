@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+  <link rel="stylesheet" href="images/leaflet.css" />
+  <script src="images/leaflet.js"></script>  
+  <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="input.css" />
+  <script type="module" src="script.js"></script>
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen">
+
+    <div id="sinistra" class="flex-col space-y-5 float-left">
+      <img class="w-50 h-14 my-10" src="https://github.com/Erixviii/sito-store/blob/main/images/logo.png?raw=true" alt="">
+      <div id="galleria">
+        <div class="p-4 max-w-xs rounded-xl shadow-xl flex items-center space-x-6">
+          <img class="h-12 w-12" src="https://github.com/Erixviii/sito-store/blob/main/images/logo.png?raw=true" alt="ChitChat Logo">
+          <div class="text-xl font-medium">Negozio</div>
+        </div>
+        <div class="p-4 max-w-xs rounded-xl shadow-xl flex items-center space-x-6">
+          <img class="h-12 w-12" src="https://github.com/Erixviii/sito-store/blob/main/images/logo.png?raw=true" alt="ChitChat Logo">
+          <div class="text-xl font-medium">Collezione</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="destra" class="bg-aqua w-3/4 float-left">
+      <nav>
+        <b>I Nostri Store</b>
+      </nav>
+      <div id="mappa"></div>
+      <div id="prodotti">
+        <div id="P1">Arancio</div>
+        <div id="P2">Rosso</div>
+        <div id="P3">Azzurro</div>
+      </div>
+    </div>
+</body>
+</html>

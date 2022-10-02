@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  /* border-radius: 8px;*/
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #cccccc;
+  background-color: #2a2a2a;
+}
+nav{
+
+  padding: 50px 0px 20px 0px;
+}
+
+#sinistra{
+  text-align: -webkit-center;
+  width: 18%;
+}
+
+#mappa{
+  height: 300px;
+  width: 500px;
+  border-radius: 8px;
+}
+
+#logo{
+  height: 50px;
+  width: auto;
+  padding: 35px 10px 25px 0px;
+}
+
+#prodotti{
+  display: flex;
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    color: #2a2a2a;
+}
+
+#P1{
+  background-color: coral;
+  width: 33%;
+  height: 100%;
+}
+
+#P2{
+  background-color: crimson;
+  width: 33%;
+  height: 100%;
+}
+
+#P3{
+  background-color: aquamarine;
+  width: 33%;
+  height: 100%;
+} 
