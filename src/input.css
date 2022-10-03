@@ -8,20 +8,24 @@
   /* border-radius: 8px;*/
 }
 
+nav{
+  width: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
   color: #cccccc;
-  background-color: #2a2a2a;
-}
-nav{
-
-  padding: 50px 0px 20px 0px;
+  background-color: rgb(18,18,18);
 }
 
 #sinistra{
   text-align: -webkit-center;
   width: 18%;
+}
+
+.btn:hover{
+  background-color: rgb(55,55,55);
 }
 
 .imggalleria{
