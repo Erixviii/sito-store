@@ -38,9 +38,24 @@ L.marker([51.5, -0.09]).addTo(map)
             }
         });
     }
-    function Eric(){
+    function Exit(){
 
         
         window.location.href = "http://127.0.0.1:5500/src/login.html";
     }
-    
+
+
+(function() {
+
+    var negozi=[
+        {
+          x: 100,
+          y: 100,
+          category: 'smartphones'
+        }
+      ];
+
+    fetch(`https://dummyjson.com/products/category/${negozi[0].category}`)
+    .then(res => res.json())
+    .then(negozio => console.log(negozio.products[0].title))
+})()
