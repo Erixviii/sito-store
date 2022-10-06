@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="" />
+  <link href="/dist/output.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<body class="min-h-screen text-xl">
+  <div class="md:h-screen flex justify-center py-12 px-6 items-center flex-wrap h-full g-6 text-gray-800">
+    <div class=" block text-white bg-zinc-900 shadow-lg rounded-lg">
+      <div class="md:p-12 md:mx-6">
+        <div class="text-center">
+          <img class="mx-auto w-40 p-5" src="https://github.com/Erixviii/sito-store/blob/main/src/images/logo.png?raw=true" alt="logo"/>
+          <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">Hunter Store</h4>
+        </div>
+        <form>
+          <p class="mb-4 text-center text-sm">Please login to your account</p>
+          <div class="mb-4">
+            <input type="text" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="username" placeholder="Username"/>
+          </div>
+          <div class="mb-4">
+            <input type="password" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="password" placeholder="Password"/>
+          </div>
+          <div class="text-center pt-1 mb-12 pb-1">
+            <button onclick="Login()" class="bg-sky-500 inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3" type="button">Log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
