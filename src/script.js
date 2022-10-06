@@ -29,18 +29,6 @@
         // .then(res => res.json())
         // .then(negozio => document.getElementById("P1").innerText = negozio.products[0].title)
 
-        // var locations = [
-        //     ["LOCATION_1", 11.8166, 122.0942],
-        //     ["LOCATION_2", 11.9804, 121.9189],
-        //     ["LOCATION_3", 10.7202, 122.5621],
-        //     ["LOCATION_4", 11.3889, 122.6277],
-        //     ["LOCATION_5", 10.5929, 122.6325]
-        //   ];
-
-        //   for (var i = 0; i < locations.length; i++) {
-        //     marker = new L.marker([locations[i][1], locations[i][2]])
-        //       .bindPopup(locations[i][0])
-        //       .addTo(map);
         //   }
         var iconOptions = {
             iconUrl: 'https://github.com/Erixviii/sito-store/blob/main/src/images/logo.png?raw=true',
@@ -111,7 +99,6 @@
         });
     }
     function Exit(){
-
         
         window.location.href = "http://127.0.0.1:5500/src/login.html";
     }

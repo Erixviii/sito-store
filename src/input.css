@@ -10,6 +10,8 @@
 
 nav{
   width: -webkit-fill-available;
+  z-index: 2000;
+  background-color: rgb(18,18,18);
 }
 
 body {
