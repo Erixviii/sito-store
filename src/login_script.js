@@ -1,3 +1,4 @@
+
 function Login(){
 
     fetch('https://dummyjson.com/auth/login', {
@@ -8,8 +9,7 @@ function Login(){
         username: document.getElementById("username").value,
         password: document.getElementById("password").value,
         expiresInMins: 60
-    })
-    })
+    })})
     .then(res => res.json())
     .then(mex => {
         if(mex.message=="Invalid credentials"){
