@@ -57,3 +57,7 @@ body {
 img{
   display: initial;
 }
+
+#prodotti{
+  place-content: center;
+}

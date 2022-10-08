@@ -13,9 +13,11 @@ function Login(){
     .then(res => res.json())
     .then(mex => {
         if(mex.message=="Invalid credentials"){
+
             window.location.href = "http://127.0.0.1:5500/src/home.html";
         }
         else {
+            
             alert("credenziali sbagliate");
         }
     });
