@@ -9,6 +9,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 }).addTo(map);
 
+
 // L.marker([51.5, -0.09]).addTo(map).on('click', function(e) {
 
     // var negozi=[
@@ -67,19 +68,25 @@ var locations = [
 for (var i = 0; i < locations.length; i++) {
     L.marker([locations[i][1], locations[i][2]], markerOptions)
         .bindPopup(locations[i][0])
-        .addTo(map);
-
-        document.getElementById("prodotti").innerHTML += ` 
-        <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5" id="prodotto">
-            <img class="rounded-xl h-auto w-fit" id="imgprodotto" src="https://dummyjson.com/image/i/products/1/1.jpg" alt="Avatar">
-            <div class="mt-10">
-                <h4><b id="product_title">John Doe</b></h4>
-                <p id="product_descr">Architect & Engineer</p>
-                <p id="product_prize"><b>10.00$</b></p>
-            </div>
-        </div> ` 
+        .addTo(map); 
     }
-
+    fetch('https://dummyjson.com/products/category/smartphones')
+    .then(res => res.json())
+    .then(prodotti => {
+        
+        for (let i = 0; i < prodotti.products.length; i++) {
+            
+            document.getElementById("prodotti").innerHTML += ` 
+            <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" id="prodotto">
+                <img class="rounded-xl h-44 w-auto" id="imgprodotto" src="https://dummyjson.com/image/i/products/${i+1}/1.jpg" alt="Avatar">
+                <div class="mt-10">
+                    <h4><b id="product_title">${prodotti.products[i].title}</b></h4>
+                    <p id="product_descr">${prodotti.products[i].category}</p>
+                    <p id="product_prize"><b>${prodotti.products[i].price}$</b></p>
+                </div>
+            </div> `
+        }
+    });
 function Exit(){
     
     window.location.href = "http://127.0.0.1:5500/src/login.html";

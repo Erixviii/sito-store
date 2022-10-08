@@ -394,7 +394,6 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
   /* 1 */
   vertical-align: middle;
   /* 2 */
@@ -645,6 +644,10 @@ video {
   height: auto;
 }
 
+.h-44 {
+  height: 11rem;
+}
+
 .h-full {
   height: 100%;
 }
@@ -788,11 +791,6 @@ video {
 .bg-sky-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
-}
-
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
 .bg-clip-padding {
