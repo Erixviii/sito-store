@@ -9,7 +9,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 }).addTo(map);
 
-
+// http://172.28.48.1:5555
+// http://172.18.2.14:5555
 // L.marker([51.5, -0.09]).addTo(map).on('click', function(e) {
 
     // var negozi=[
