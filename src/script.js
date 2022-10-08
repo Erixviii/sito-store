@@ -25,7 +25,7 @@ let bigmarkerOptions = {
     draggable: false,
     icon: L.icon({
         iconUrl: 'https://github.com/Erixviii/sito-store/blob/main/src/images/biglogo.png?raw=true',
-        iconSize: [50, 50]})
+        iconSize: [80, 80]})
     }
 
 let southWest = map.getBounds().getSouthWest();
@@ -55,7 +55,7 @@ let locations = [
     ["lighting",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
 ];
 
-L.marker([locations[i][1], locations[i][2]], markerOptions)
+L.marker([45.6515381,11.6388277], bigmarkerOptions)
 .bindPopup("Hunter Stores Mall")
 .addTo(map)
 .on('click',async function() {

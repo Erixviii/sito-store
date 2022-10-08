@@ -1,3 +1,6 @@
 {
-    "liveshare.showReadOnlyUsersInEditor": "always"
+    "liveshare.showReadOnlyUsersInEditor": "always",
+    "liveServer.settings.mount": [
+    
+    ]
 }
