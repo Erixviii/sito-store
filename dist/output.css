@@ -563,12 +563,12 @@ video {
   float: left;
 }
 
-.m-0 {
-  margin: 0px;
-}
-
 .m-auto {
   margin: auto;
+}
+
+.m-0 {
+  margin: 0px;
 }
 
 .my-10 {
@@ -645,16 +645,12 @@ video {
   height: 20rem;
 }
 
-.h-auto {
-  height: auto;
+.h-44 {
+  height: 11rem;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-44 {
-  height: 11rem;
 }
 
 .max-h-96 {
@@ -679,12 +675,6 @@ video {
 
 .w-56 {
   width: 14rem;
-}
-
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .w-40 {
@@ -1024,7 +1014,7 @@ img{
   display: initial;
 }
 
-#prodotti{
+#prodottihome{
   place-content: center;
 }
 

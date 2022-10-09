@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="input.css" />
   <link href="/dist/output.css" rel="stylesheet">
-  <script type="module" src="collezione_script.js"></script>
+  <script src="collezione_script.js"></script>
   <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body class="min-h-screen text-xl">
@@ -31,16 +31,7 @@
       <b class="float-left pt-2">La tua collezione</b>
       <button onclick="Exit()" class="rounded-full btn float-right w-12 h-11 mr-5 bg-neutral-800">E</button>
     </nav>
-    <div id="prodotti" class="mt-40 space-x-5 flex px-28 justify-start text-center content-center flex-row flex-wrap ">
-      <div class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5" id="prodotto">
-        <img class="rounded-xl h-auto w-fit" id="imgprodotto" src="https://dummyjson.com/image/i/products/1/1.jpg" alt="Avatar">
-        <div class="mt-10">
-          <h4><b id="product_title">John Doe</b></h4>
-          <p id="product_descr">Architect & Engineer</p>
-          <p id="product_prize"><b>10.00$</b></p>
-        </div>
-      </div>    
-    </div>
+    <div id="prodotti" class="space-x-5 flex items-center flex-wrap px-28 text-center flex-row mt-40"></div>
   </div>
 </body>
 </html>
