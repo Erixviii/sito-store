@@ -123,7 +123,7 @@ var collezione= [1] ;
                 for (let i = 0; i < prodotti.products.length; i++) {
                     
                     document.getElementById("prodottihome").innerHTML += ` 
-                    <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" id="${prodotti.products[i].id}">
+                    <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" onclick="Details(${prodotti.products[i].id})" id="${prodotti.products[i].id}">
                         <img class="m-auto rounded-xl h-44 w-auto" id="imgprodotto" src="${prodotti.products[i].thumbnail}" alt="Avatar">
                         <div class="mt-10">
                             <h4><b id="product_title">${prodotti.products[i].title}</b></h4>
@@ -143,3 +143,8 @@ function Exit(){
     window.location.href = "http://127.0.0.1:5500/src/login.html";
 }
 
+function Details(prodotto){
+
+    localStorage.setItem("dettagli",prodotto);
+    window.location.href = "http://127.0.0.1:5500/src/dettagli.html";
+}

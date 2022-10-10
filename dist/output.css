@@ -653,6 +653,12 @@ video {
   height: 100%;
 }
 
+.max-h-fit {
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -687,6 +693,12 @@ video {
 
 .max-w-xs {
   max-width: 20rem;
+}
+
+.max-w-fit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .max-w-2xl {
@@ -925,6 +937,11 @@ video {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -1016,6 +1033,10 @@ img{
 
 #prodottihome{
   place-content: center;
+}
+
+.checked {
+  color: #cccccc;
 }
 
 .hover\:bg-blue-700:hover {

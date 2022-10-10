@@ -61,3 +61,7 @@ img{
 #prodottihome{
   place-content: center;
 }
+
+.checked {
+  color: #cccccc;
+}

@@ -12,7 +12,7 @@
                 console.log(prodotto.id);
     
                 document.getElementById("prodotti").innerHTML += ` 
-                <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" id="${prodotto.id}">
+                <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" onclick="Details(${prodotto.id})" id="${prodotto.id}">
                     <img class="m-auto rounded-xl h-44 w-auto" id="imgprodotto" src="${prodotto.thumbnail}" alt="Avatar">
                     <div class="mt-10">
                         <h4><b id="product_title">${prodotto.title}</b></h4>
@@ -27,4 +27,10 @@
 function Exit(){
 
     window.location.href = "http://127.0.0.1:5500/src/login.html";
+}
+
+function Details(prodotto){
+
+    localStorage.setItem("dettagli",prodotto);
+    window.location.href = "http://127.0.0.1:5500/src/dettagli.html";
 }
