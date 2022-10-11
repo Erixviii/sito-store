@@ -29,31 +29,29 @@
 
   <div id="destra" class="bg-aqua w-3/4 float-left">
     <nav class="py-14 fixed px-5">
-      <b class="float-left pt-2">La tua collezione</b>
+      <b class="float-left text-2xl pt-2 mx-5">Dettagli</b>
       <button onclick="Exit()" class="rounded-full btn float-right w-12 h-11 mr-5 bg-neutral-800">E</button>
     </nav>
-    <div class="mt-40 max-h-fit max-w-fit">
+    <div class="mt-40 w-full h-screen">
+      <div class="w-4/6 float-left mx-10 h-full">
 
-        <div class=" float-left">
+          <h1 id="title" class="  font-bold text-5xl pb-5">Phone 9</h1>
 
-            <h1 id="title"></h1>
+          <span class="fa fa-star text-black"></span>
+          <span class="fa fa-star text-black"></span>
+          <span class="fa fa-star text-black"></span>
+          <span class="fa fa-star text-black"></span>
+          <p class="fa fa-star text-black"></p>
+    
 
-            <span class="fa fa-star text-black"></span>
-            <span class="fa fa-star text-black"></span>
-            <span class="fa fa-star text-black"></span>
-            <span class="fa fa-star text-black"></span>
-            <span class="fa fa-star text-black"></span>
-
-            <img id="" src="" alt="">
-        </div>
-        <div class="float-right">
-
-
-
-        </div>        
+          <div id="thumbnail" class="my-14 w-full h-3/5 rounded-2xl bg-zinc-600 z-10">
+            <button class="btn w-11 h-14 float-left rounded-full bg-neutral-800 z-50" onclick="Nextimg(-1)"><</button>
+            <button class="btn w-11 h-14 float-right rounded-full bg-neutral-800 z-50" onclick="Nextimg(1)">></button>
+          </div>
+      </div>
+      <div class="w-2/6 float-right bg-red-600"></div>        
     </div>
   </div>
-
   <script src="dettagli_script.js"></script>
 </body>
 </html>
