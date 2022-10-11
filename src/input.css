@@ -68,4 +68,23 @@ img{
 
 .z-50{
   margin-top: 24%;
+  margin-inline: 10%;
+}
+
+#thumbnail{
+  background-size: auto 100%;
+  background: url(https://dummyjson.com/image/i/products/1/1.jpg) no-repeat center;
+}
+.dysplay{
+  margin-top: 2%;
+}
+table{
+  display: flex;
+}
+.bg-black{
+  text-align: left;
+}
+#example{
+  border-color: white;
+  border-width: 0.5px;
 }

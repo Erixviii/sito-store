@@ -648,6 +648,10 @@ video {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .list-item {
   display: list-item;
 }
@@ -820,9 +824,9 @@ video {
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
 
-.bg-blue-600 {
+.bg-zinc-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+  background-color: rgb(82 82 91 / var(--tw-bg-opacity));
 }
 
 .bg-red-600 {
@@ -845,13 +849,12 @@ video {
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
 
-.bg-zinc-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(82 82 91 / var(--tw-bg-opacity));
-}
-
 .bg-clip-padding {
   background-clip: padding-box;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .p-4 {
@@ -920,8 +923,8 @@ video {
   padding-top: 0.5rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 
 .pb-1 {
@@ -930,10 +933,6 @@ video {
 
 .pt-1 {
   padding-top: 0.25rem;
-}
-
-.pb-5 {
-  padding-bottom: 1.25rem;
 }
 
 .text-center {
@@ -1113,6 +1112,19 @@ img{
 
 .z-50{
   margin-top: 24%;
+}
+
+#thumbnail{
+  background-image: url(https://dummyjson.com/image/i/products/1/1.jpg);
+  background-size: auto 100%;
+}
+
+.dysplay{
+  margin-top: 2%;
+}
+
+.table-dark{
+  background-color: black;
 }
 
 .hover\:bg-blue-700:hover {

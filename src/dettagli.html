@@ -8,7 +8,14 @@
   <link href="/dist/output.css" rel="stylesheet">
   <link href="/dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+      $('#example').DataTable();
+  });
+  </script>
 </head>
 <body class="min-h-screen text-xl">
   <div id="sinistra" class="list-item float-left">
@@ -37,19 +44,48 @@
 
           <h1 id="title" class="  font-bold text-5xl pb-5">Phone 9</h1>
 
-          <span class="fa fa-star text-black"></span>
-          <span class="fa fa-star text-black"></span>
-          <span class="fa fa-star text-black"></span>
-          <span class="fa fa-star text-black"></span>
-          <p class="fa fa-star text-black"></p>
-    
+          <span id="1" class="fa fa-star text-black"></span>
+          <span id="2" class="fa fa-star text-black"></span>
+          <span id="3" class="fa fa-star text-black"></span>
+          <span id="4" class="fa fa-star text-black"></span>
+          <span id="5" class="fa fa-star text-black"></span>
 
-          <div id="thumbnail" class="my-14 w-full h-3/5 rounded-2xl bg-zinc-600 z-10">
+          <div id="thumbnail" class="my-14  h-3/5 rounded-2xl bg-zinc-600 z-10">
             <button class="btn w-11 h-14 float-left rounded-full bg-neutral-800 z-50" onclick="Nextimg(-1)"><</button>
             <button class="btn w-11 h-14 float-right rounded-full bg-neutral-800 z-50" onclick="Nextimg(1)">></button>
           </div>
+
+          <div>
+          <table id="example" class="display" style="width:100%">
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+            <script src="dettagli_script.js"></script>
+            
+            <tr class="bg-black"><th>ID</th></tr>
+            <tr class="bg-black"><th>Title</th></tr>
+            <tr class="bg-black"><th>Description</th></tr>
+            <tr class="bg-black"><th>Price</th></tr>
+            <tr class="bg-black"><th>Discount percentage</th></tr>
+            <tr class="bg-black"><th>Rating</th></tr>
+            <tr class="bg-black"><th>Stok</th></tr>
+            <tr class="bg-black"><th>Brand</th></tr>
+            <tr class="bg-black"><th>Category</th></tr>
+            
+            <tbody id="table_body">
+               
+              </tfoot>
+            </table>
       </div>
-      <div class="w-2/6 float-right bg-red-600"></div>        
+
+      
+      <!-- <div class="w-2/6 float-right bg-red-600">
+
+        <img src="" alt="">
+        <h4>10$</h4>
+        <button></button>
+
+      </div> -->
     </div>
   </div>
   <script src="dettagli_script.js"></script>

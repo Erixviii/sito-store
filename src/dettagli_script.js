@@ -1,53 +1,91 @@
 (async function(){
 
     let id = Number(localStorage.getItem("dettagli"));
-    
-    fetch(`https://dummyjson.com/products/${id}`)
-    .then(res => res.json())
-    .then(prodotti => {
-        
-        $("#title").innerHTML= "ciao"
 
-            // for (let i = 0; i < prodotti.products.length; i++) {
+    fetch(`https://dummyjson.com/products`).then((data)=>{
+        return data.json();
+    }).then((objectData)=>{
+        let tableData="";
+        let i=0;
+        objectData.products.map((values)=>{
+
+
+            if(i==0){
                 
-            //     document.getElementById("prodottihome").innerHTML += ` 
-            //     <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" id="prodotto">
-            //         <img class="m-auto rounded-xl h-44 w-auto" id="imgprodotto" src="${prodotti.products[i].thumbnail}" alt="Avatar">
-            //         <div class="mt-10">
-            //             <h4><b id="product_title">${prodotti.products[i].title}</b></h4>
-            //             <p id="product_prize"><b>${prodotti.products[i].price}$</b></p>
-            //         </div>
-            //     </div> `
-            // }
+                tableData+= `<tr>
+                    <td>${values.id}</td></tr>
+                    <tr><td>${values.title}</td></tr>
+                    <tr><td>${values.description}</td></tr>
+                    <tr><td>${values.price}</td></tr>
+                    <tr><td>${values.discountPercentage}</td></tr>
+                    <tr><td>${values.rating}</td></tr>
+                    <tr><td>${values.stock}</td></tr>
+                    <tr><td>${values.brand}</td></tr>
+                    <tr><td>${values.category}</td></tr>
+                </tr>`;
+                i++;
+            }
+        });
+        document.getElementById("table_body").
+        innerHTML=tableData;
+    })
+
+    await fetch(`https://dummyjson.com/products/${id}`)
+    .then(res => res.json())
+    // .then((objectData)=>{
+    //     let tableData="";
+    //     objectData.map((values)=>{
+    //         tableData+= `<tr>
+    //         <td>Tiger Nixon</td>
+    //         <td>System Architect</td>
+    //         <td>Edinburgh</td>
+    //         <td>61</td>
+    //         <td>2011-04-25</td>
+    //         <td>$320,800</td>
+    //         <td>61</td>
+    //         <td>2011-04-25</td>
+    //         <td>$320,800</td>
+    //     </tr>`
+    //     });
+    //     document.getElementById("table_body").
+    //     innerHTML=tableData;
+    // })
+    .then(prodotto => {
+            localStorage.setItem("images",prodotto.images);
+            $("#title").html(prodotto.title);
+            $("#thumbnail").css("background-image", `url(${prodotto.images[0]})`); 
+
+            for (let index = 0; index <= Math.ceil(prodotto.rating); index++) {
+                
+                $(`#${index}`).addClass("checked");
+            }
         }
     );
 
-    // let n = 0;
-    // let immagini = [
-    // 'https://www.itisrossi.edu.it/wp-content/uploads/2022/09/panoramica-istituto-750x300.jpg',
-    // 'https://www.itisrossi.edu.it/wp-content/uploads/2022/07/rossi-confindustria-panoramica-750x300.jpg',
-    // 'https://www.itisrossi.edu.it/wp-content/uploads/2022/07/gnm-panoramica-750x300.jpg',
-    // 'https://www.itisrossi.edu.it/wp-content/uploads/2022/06/nicola-home-750x300.jpg',
-    // 'https://www.itisrossi.edu.it/wp-content/uploads/2022/06/foto-panoramica-2022-750x300.jpg',
-    // ];
 
-    // Nextimg(n);
+    localStorage.setItem("indice",0);
+
+    Nextimg(0);
 })();
 
-function Nextimg(c) {
+function Nextimg(i) {
 
-    // n += c;
-
-    // let barra = document.getElementById('slideshow');
-
-    // if (n > immagini.length - 1) {
-    //     n = 1;
-    // }
-    // if (n < 0) {
-    //     n = immagini.length - 1;
-    // }
-
-    // barra.src = 'url(' + immagini[n] + ')';
+    fetch(`https://dummyjson.com/products/${Number(localStorage.getItem("dettagli"))}`)
+    .then(res => res.json())
+    .then(prodotto => {
+        
+            let n = Number(localStorage.getItem("indice"))+i;
+        
+            if (n >= prodotto.images.length) {
+                n = 0;
+            }
+            if (n < 0) {
+                n = prodotto.images.length - 1;
+            }
+            $("#thumbnail").css("background-image", `url(${prodotto.images[n]})`); 
+            localStorage.setItem("indice",n);     
+        }
+    );
 }
 
 function Exit(){
