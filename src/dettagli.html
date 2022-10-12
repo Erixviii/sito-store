@@ -13,10 +13,10 @@
 </head>
 <body class="min-h-screen text-xl">
 
-  <div id="popup" class="flex-col right-28 top-16 rounded-2xl absolute z-50 bg-neutral-700 h-60 w-60">
+  <div id="popup" class="flex-col flex right-28 top-16 rounded-2xl fixed z-50 bg-neutral-700 h-60 w-60">
     <p  id="username" class=" font-medium ml-4 py-4"></p>
     <p id="portafoglio"  class=" font-medium ml-4 py-4 grow"></p>
-    <p class=" font-medium ml-4 py-4" onclick="Exit()"> Esci</p>
+    <p class=" cursor-pointer font-medium ml-4 py-4" onclick="Exit()"> Esci</p>
   </div>
 
   <div id="sinistra" class="list-item float-left">
@@ -52,7 +52,7 @@
           <span id="5" class="fa fa-star text-black"></span>
 
 
-          <div id="thumbnail" class="mb-14  h-3/5 rounded-2xl bg-zinc-600 z-10">
+          <div id="thumbnail" class="mb-14 h-3/5 rounded-2xl bg-zinc-600 z-10">
             <button class="btn w-11 h-14 float-left rounded-full bg-neutral-800 z-40" onclick="Nextimg(-1)"><</button>
             <button class="btn w-11 h-14 float-right rounded-full bg-neutral-800 z-40" onclick="Nextimg(1)">></button>
           </div>

@@ -1,5 +1,8 @@
 (async function(){
 
+    setTimeout(() => {
+        $("#popup").css("display","none");
+       }, 2000);
     let id = Number(localStorage.getItem("dettagli"));
     $("#username").html(localStorage.getItem("username"));
     $("#portafoglio").html("Portafoglio: "+ localStorage.getItem("portafoglio")+ "$");
@@ -37,11 +40,24 @@
 
         $("#btn_compra").on("click",function Compra(){
 
-            localStorage.setItem("portafoglio", Number(localStorage.getItem("portafoglio"))-Number(prodotto.price));
-            $("#portafoglio").html("Portafoglio: "+ localStorage.getItem("portafoglio")+ "$");
+            if (Number(localStorage.getItem("portafoglio"))-Number(prodotto.price)<0) {
+                alert("denaro insufficiente");
+            }else{
 
-            localStorage.setItem("coll",localStorage.getItem("coll")+","+prodotto.id);
-            
+                localStorage.setItem("portafoglio", Number(localStorage.getItem("portafoglio"))-Number(prodotto.price));
+                $("#portafoglio").html("Portafoglio: "+ localStorage.getItem("portafoglio")+ "$");
+
+                if (localStorage.getItem("coll")==""){
+
+                    localStorage.setItem("coll",[prodotto.id]);
+                }
+                else{
+                    let collezione= localStorage.getItem("coll").split(',').map(Number);
+                    console.log( "non vuota");
+                    collezione.push(prodotto.id);
+                    localStorage.setItem("coll",collezione);
+                }
+            }
         })
     });
 
@@ -75,6 +91,7 @@ function Exit(){
 
     window.location.href = "http://127.0.0.1:5500/src/login.html";
 }
+
 let popup=false;
 
 function Popup(){

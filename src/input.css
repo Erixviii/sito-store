@@ -78,18 +78,18 @@ img{
 }
 #example{
   display: flex;
-  margin-left: 5%;
+  margin-left: 2%;
 }
 .bg-black{
   text-align: left;
 }
 td,th {
-  padding: 15px;
+  padding: 20px;
 }
 
 #dettagli_td{
-  text-align-last: end;
-  width: 500px;
+  text-align: right;
+  width: 600px;
 }
 .example{
   border-color: white;
@@ -101,8 +101,5 @@ td,th {
   margin-right: -20px;
   margin-bottom: 50px;
   padding: 6px;
-}
-#popup{
-  display: none;
 }
 .dataTables_filter, .dataTables_info, .dataTables_paginate, .dataTables_length { display: none; }

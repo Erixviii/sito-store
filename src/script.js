@@ -1,8 +1,13 @@
 
 ( async function(){
 
-    
-    localStorage.setItem("coll",[]);
+   setTimeout(() => {
+    $("#popup").css("display","none");
+   }, 2000);
+
+   $("#iniziale").html((localStorage.getItem("username")).charAt(0).toUpperCase())
+   $("#username").html(localStorage.getItem("username"));
+   $("#portafoglio").html("Portafoglio: "+ localStorage.getItem("portafoglio")+ "$");
 
     let map = L.map('mappa').setView([50, 50], 1)
     .setMaxBounds([[84.67351256610522, -174.0234375], [-58.995311187950925, 180.2421875]]);
@@ -35,16 +40,16 @@
     
     let southWest = map.getBounds().getSouthWest();
     let northEast = map.getBounds().getNorthEast();
-    let lngSpan = northEast.lng - southWest.lng;
+    let lngSpan = northEast.lng - southWest.lng -50;
     let latSpan = northEast.lat - southWest.lat;
     
     let locations = [
-        ["smartphones",southWest.lat + latSpan * Math.random() * (84.67351256610522 - -174.0234375) -174.0234375 ,southWest.lng + lngSpan * Math.random() * (180.2421875 - -58.995311187950925) - -58.995311187950925],
+        ["smartphones",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["laptops",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["fragrances",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["skincare", southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["groceries",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
-        ["home-decoration",southWest.lat + latSpan * Math.random() * (84.67351256610522 - -174.0234375) -174.0234375,southWest.lng + lngSpan * Math.random()  * (180.2421875 - -58.995311187950925) - -58.995311187950925],
+        ["home-decoration",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["furniture",southWest.lat + latSpan * Math.random(), Math.random()],
         ["tops",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["womens-dresses",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
@@ -101,7 +106,7 @@
                 
                 for (let i = 0; i < prodotti.products.length; i++) {
                     document.getElementById("prodottihome").innerHTML += ` 
-                    <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" id="${prodotti.products[i].id}">
+                    <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center"  onclick="Details(${prodotti.products[i].id})" id="${prodotti.products[i].id}">
                         <img class="m-auto rounded-xl h-44 w-auto" id="imgprodotto" src="${prodotti.products[i].thumbnail}" alt="Avatar">
                         <div class="mt-10">
                             <h4><b id="product_title">${prodotti.products[i].title}</b></h4>
@@ -133,8 +138,6 @@
             }
         });
     }
-    $("#username").html(localStorage.getItem("username"));
-    $("#portafoglio").html("Portafoglio: "+ localStorage.getItem("portafoglio")+ "$");
 })();
 
 

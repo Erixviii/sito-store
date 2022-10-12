@@ -12,11 +12,11 @@ function Login(){
     })})
     .then(res => res.json())
     .then(mex => {
-        if(mex.message=="Invalid credentials"){
+        if(mex.message!="Invalid credentials"){
 
             localStorage.setItem("username",document.getElementById("username").value);
-            localStorage.setItem("portafoglio", Math.round(Math.random()*1000000 + 1000))
-
+            localStorage.setItem("portafoglio", Math.round(Math.random()*100000 + 1000))
+            localStorage.setItem("coll",[]);
             window.location.href = "http://127.0.0.1:5500/src/home.html";
         }
         else {

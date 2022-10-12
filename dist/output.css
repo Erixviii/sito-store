@@ -555,10 +555,6 @@ video {
   position: fixed;
 }
 
-.absolute {
-  position: absolute;
-}
-
 .right-28 {
   right: 7rem;
 }
@@ -577,6 +573,10 @@ video {
 
 .z-40 {
   z-index: 40;
+}
+
+.z-30 {
+  z-index: 30;
 }
 
 .float-right {
@@ -790,6 +790,10 @@ video {
 
 .grow {
   flex-grow: 1;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-row {
@@ -1195,7 +1199,7 @@ img{
 
 #example{
   display: flex;
-  margin-left: 5%;
+  margin-left: 2%;
 }
 
 .bg-black{
@@ -1203,13 +1207,12 @@ img{
 }
 
 td,th {
-  padding: 15px;
+  padding: 20px;
 }
 
 #dettagli_td{
-  -moz-text-align-last: end;
-       text-align-last: end;
-  width: 500px;
+  text-align: right;
+  width: 600px;
 }
 
 .example{
@@ -1223,10 +1226,6 @@ td,th {
   margin-right: -20px;
   margin-bottom: 50px;
   padding: 6px;
-}
-
-#popup{
-  display: none;
 }
 
 .dataTables_filter, .dataTables_info, .dataTables_paginate, .dataTables_length {

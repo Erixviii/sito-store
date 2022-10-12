@@ -11,10 +11,10 @@
 </head>
 <body class="min-h-screen text-xl">
 
-  <div id="popup" class="flex-col right-28 top-16 rounded-2xl absolute z-50 bg-neutral-700 h-60 w-60">
+  <div id="popup" class="flex-col flex right-28 top-16 rounded-2xl fixed z-50 bg-neutral-700 h-60 w-60">
     <p  id="username" class=" font-medium ml-4 py-4"></p>
     <p id="portafoglio"  class=" font-medium ml-4 py-4 grow"></p>
-    <p class=" font-medium ml-4 py-4" onclick="Exit()"> Esci</p>
+    <p class=" cursor-pointer font-medium ml-4 py-4" onclick="Exit()"> Esci</p>
   </div>
 
     <div id="sinistra" class="list-item float-left">
@@ -34,11 +34,11 @@
     </div>
 
     <div id="destra" class="bg-aqua w-3/4 float-left">
-      <nav class="py-14 fixed px-5">
+      <nav class="py-14 fixed px-5 z-30">
         <b class="float-left pt-2">I Nostri Store</b>
-        <button onclick="Popup()" class="rounded-full btn float-right w-12 h-11 mr-5 bg-neutral-800">E</button>
+        <button onclick="Popup()" id="iniziale" class="rounded-full btn float-right w-12 h-11 mr-5 bg-neutral-800"></button>
       </nav>
-      <div id="mappa" class="max-w-2xl max-h-96 mx-auto mt-40"></div>
+      <div id="mappa" class="max-w-2xl max-h-96 mx-auto mt-40 z-10"></div>
       <div id="prodottihome" class="space-x-5 flex px-28 justify-start text-center content-center flex-row flex-wrap "></div>
     </div>
 

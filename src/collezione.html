@@ -7,16 +7,16 @@
   <link rel="stylesheet" href="input.css" />
   <link href="/dist/output.css" rel="stylesheet">
   <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
 <body class="min-h-screen text-xl">
 
-  <div id="popup" class="flex-col right-28 top-16 rounded-2xl absolute z-50 bg-neutral-700 h-60 w-60">
-    <p class=" font-medium ml-4 py-4"> Nome</p>
-    <p class=" font-medium ml-4 py-4 grow"> Portafoglio : 1000$</p>
-    <p class=" font-medium ml-4 py-4" onclick="Exit()"> Esci</p>
+  <div id="popup" class="flex-col flex right-28 top-16 rounded-2xl fixed z-50 bg-neutral-700 h-60 w-60">
+    <p  id="username" class=" font-medium ml-4 py-4"></p>
+    <p id="portafoglio"  class=" font-medium ml-4 py-4 grow"></p>
+    <p class=" cursor-pointer font-medium ml-4 py-4" onclick="Exit()"> Esci</p>
   </div>
 
   <div id="sinistra" class="list-item float-left">
