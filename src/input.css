@@ -10,7 +10,7 @@
 
 nav{
   width: -webkit-fill-available;
-  z-index: 2000;
+  z-index: 49;
   background-color: rgb(18,18,18);
 }
 
@@ -52,7 +52,6 @@ body {
 .sinismenu{
   width: inherit;
 }  
- 
 
 img{
   display: initial;
@@ -66,7 +65,7 @@ img{
   color: #cccccc;
 }
 
-.z-50{
+.z-40{
   margin-top: 24%;
   margin-inline: 10%;
 }
@@ -74,17 +73,36 @@ img{
 #thumbnail{
   background-size: auto 100%;
   background: url(https://dummyjson.com/image/i/products/1/1.jpg) no-repeat center;
+  margin-top: 30px;
+  margin-left: -120px;
 }
-.dysplay{
-  margin-top: 2%;
-}
-table{
+#example{
   display: flex;
+  margin-left: 5%;
 }
 .bg-black{
   text-align: left;
 }
-#example{
+td,th {
+  padding: 15px;
+}
+
+#dettagli_td{
+  text-align-last: end;
+  width: 500px;
+}
+.example{
   border-color: white;
   border-width: 0.5px;
 }
+#example2{
+  border-color: white;
+  border-width: 0.5px;
+  margin-right: -20px;
+  margin-bottom: 50px;
+  padding: 6px;
+}
+#popup{
+  display: none;
+}
+.dataTables_filter, .dataTables_info, .dataTables_paginate, .dataTables_length { display: none; }

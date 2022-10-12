@@ -7,17 +7,18 @@
   <link rel="stylesheet" href="input.css" />
   <link href="/dist/output.css" rel="stylesheet">
   <link href="/dist/output.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-  <script>
-      $(document).ready(function () {
-      $('#example').DataTable();
-  });
-  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
 <body class="min-h-screen text-xl">
+
+  <div id="popup" class="flex-col right-28 top-16 rounded-2xl absolute z-50 bg-neutral-700 h-60 w-60">
+    <p  id="username" class=" font-medium ml-4 py-4"></p>
+    <p id="portafoglio"  class=" font-medium ml-4 py-4 grow"></p>
+    <p class=" font-medium ml-4 py-4" onclick="Exit()"> Esci</p>
+  </div>
+
   <div id="sinistra" class="list-item float-left">
     <div class="sinismenu fixed flex-col space-y-5">
       <img class="w-50 h-14 my-10" src="https://github.com/Erixviii/sito-store/blob/main/src/images/logo.png?raw=true" alt="">
@@ -37,7 +38,7 @@
   <div id="destra" class="bg-aqua w-3/4 float-left">
     <nav class="py-14 fixed px-5">
       <b class="float-left text-2xl pt-2 mx-5">Dettagli</b>
-      <button onclick="Exit()" class="rounded-full btn float-right w-12 h-11 mr-5 bg-neutral-800">E</button>
+      <button onclick="Popup()" class="rounded-full btn float-right w-12 h-11 mr-5 bg-neutral-800">E</button>
     </nav>
     <div class="mt-40 w-full h-screen">
       <div class="w-4/6 float-left mx-10 h-full">
@@ -50,18 +51,14 @@
           <span id="4" class="fa fa-star text-black"></span>
           <span id="5" class="fa fa-star text-black"></span>
 
-          <div id="thumbnail" class="my-14  h-3/5 rounded-2xl bg-zinc-600 z-10">
-            <button class="btn w-11 h-14 float-left rounded-full bg-neutral-800 z-50" onclick="Nextimg(-1)"><</button>
-            <button class="btn w-11 h-14 float-right rounded-full bg-neutral-800 z-50" onclick="Nextimg(1)">></button>
+
+          <div id="thumbnail" class="mb-14  h-3/5 rounded-2xl bg-zinc-600 z-10">
+            <button class="btn w-11 h-14 float-left rounded-full bg-neutral-800 z-40" onclick="Nextimg(-1)"><</button>
+            <button class="btn w-11 h-14 float-right rounded-full bg-neutral-800 z-40" onclick="Nextimg(1)">></button>
           </div>
 
           <div>
-          <table id="example" class="display" style="width:100%">
-            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-            <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-            <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-            <script src="dettagli_script.js"></script>
-            
+          <table id="example" class="display" style="width:130%">
             <tr class="bg-black"><th>ID</th></tr>
             <tr class="bg-black"><th>Title</th></tr>
             <tr class="bg-black"><th>Description</th></tr>
@@ -71,21 +68,21 @@
             <tr class="bg-black"><th>Stok</th></tr>
             <tr class="bg-black"><th>Brand</th></tr>
             <tr class="bg-black"><th>Category</th></tr>
-            
             <tbody id="table_body">
                
               </tfoot>
             </table>
+          </div>
       </div>
 
       
-      <!-- <div class="w-2/6 float-right bg-red-600">
+      <div class="text-center float-right w-1/4 h-3/5 mt-44 pt-4">
 
-        <img src="" alt="">
-        <h4>10$</h4>
-        <button></button>
+        <img id="r_thumbnail" class=" w-11/12 rounded-2xl mt-3 ">
+        <h4 id="r_prize" class=" font-extrabold weigth my-5" ></h4>
+        <button class="w-11/12 rounded-2xl h-1/6  bg-cyan-600 hover:bg-cyan-500" id="btn_compra"></button>
 
-      </div> -->
+      </div>
     </div>
   </div>
   <script src="dettagli_script.js"></script>

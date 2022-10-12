@@ -1,6 +1,8 @@
-var collezione= [1] ;
 
-(function CreateMap(){
+( async function(){
+
+    
+    localStorage.setItem("coll",[]);
 
     let map = L.map('mappa').setView([50, 50], 1)
     .setMaxBounds([[84.67351256610522, -174.0234375], [-58.995311187950925, 180.2421875]]);
@@ -37,12 +39,12 @@ var collezione= [1] ;
     let latSpan = northEast.lat - southWest.lat;
     
     let locations = [
-        ["smartphones",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
+        ["smartphones",southWest.lat + latSpan * Math.random() * (84.67351256610522 - -174.0234375) -174.0234375 ,southWest.lng + lngSpan * Math.random() * (180.2421875 - -58.995311187950925) - -58.995311187950925],
         ["laptops",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["fragrances",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["skincare", southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["groceries",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
-        ["home-decoration",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
+        ["home-decoration",southWest.lat + latSpan * Math.random() * (84.67351256610522 - -174.0234375) -174.0234375,southWest.lng + lngSpan * Math.random()  * (180.2421875 - -58.995311187950925) - -58.995311187950925],
         ["furniture",southWest.lat + latSpan * Math.random(), Math.random()],
         ["tops",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
         ["womens-dresses",southWest.lat + latSpan * Math.random(),southWest.lng + lngSpan * Math.random()],
@@ -111,32 +113,31 @@ var collezione= [1] ;
         }
     });
 
-    (async function() {
+    document.getElementById("prodottihome").innerHTML = '';
+    for (let i = 0; i < locations.length; i++){
 
-        document.getElementById("prodottihome").innerHTML = '';
-        for (let i = 0; i < locations.length; i++){
-    
-            await fetch(`https://dummyjson.com/products/category/${locations[i][0]}`)
-            .then(res => res.json())
-            .then(prodotti => {
+        await fetch(`https://dummyjson.com/products/category/${locations[i][0]}`)
+        .then(res => res.json())
+        .then(prodotti => {
+            
+            for (let i = 0; i < prodotti.products.length; i++) {
                 
-                for (let i = 0; i < prodotti.products.length; i++) {
-                    
-                    document.getElementById("prodottihome").innerHTML += ` 
-                    <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" onclick="Details(${prodotti.products[i].id})" id="${prodotti.products[i].id}">
-                        <img class="m-auto rounded-xl h-44 w-auto" id="imgprodotto" src="${prodotti.products[i].thumbnail}" alt="Avatar">
-                        <div class="mt-10">
-                            <h4><b id="product_title">${prodotti.products[i].title}</b></h4>
-                            <p id="product_prize"><b>${prodotti.products[i].price}$</b></p>
-                        </div>
-                    </div> `
-                }
-            });
-        }
-    })();
-
-    localStorage.setItem("coll",[1]);
+                document.getElementById("prodottihome").innerHTML += ` 
+                <div style="margin-left: 0px" class="p-2 max-w-xs btn rounded-xl w-56 h-80 mt-5 text-center" onclick="Details(${prodotti.products[i].id})" id="${prodotti.products[i].id}">
+                    <img class="m-auto rounded-xl h-44 w-auto" id="imgprodotto" src="${prodotti.products[i].thumbnail}" alt="Avatar">
+                    <div class="mt-10">
+                        <h4><b id="product_title">${prodotti.products[i].title}</b></h4>
+                        <p id="product_prize"><b>${prodotti.products[i].price}$</b></p>
+                    </div>
+                </div> `
+            }
+        });
+    }
+    $("#username").html(localStorage.getItem("username"));
+    $("#portafoglio").html("Portafoglio: "+ localStorage.getItem("portafoglio")+ "$");
 })();
+
+
 
 function Exit(){
 
@@ -147,4 +148,16 @@ function Details(prodotto){
 
     localStorage.setItem("dettagli",prodotto);
     window.location.href = "http://127.0.0.1:5500/src/dettagli.html";
+}
+
+let popup=false;
+
+function Popup(){
+
+    if(popup)
+     $("#popup").css("display","flex");
+    else
+     $("#popup").css("display","none");
+
+    popup=!popup;
 }

@@ -8,11 +8,14 @@ function Login(){
         
         username: document.getElementById("username").value,
         password: document.getElementById("password").value,
-        expiresInMins: 60
+        expiresInMins: 30
     })})
     .then(res => res.json())
     .then(mex => {
         if(mex.message=="Invalid credentials"){
+
+            localStorage.setItem("username",document.getElementById("username").value);
+            localStorage.setItem("portafoglio", Math.round(Math.random()*1000000 + 1000))
 
             window.location.href = "http://127.0.0.1:5500/src/home.html";
         }

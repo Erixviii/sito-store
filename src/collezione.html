@@ -6,10 +6,19 @@
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="input.css" />
   <link href="/dist/output.css" rel="stylesheet">
-  <script src="collezione_script.js"></script>
   <link href="/dist/output.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
 <body class="min-h-screen text-xl">
+
+  <div id="popup" class="flex-col right-28 top-16 rounded-2xl absolute z-50 bg-neutral-700 h-60 w-60">
+    <p class=" font-medium ml-4 py-4"> Nome</p>
+    <p class=" font-medium ml-4 py-4 grow"> Portafoglio : 1000$</p>
+    <p class=" font-medium ml-4 py-4" onclick="Exit()"> Esci</p>
+  </div>
+
   <div id="sinistra" class="list-item float-left">
     <div class="sinismenu fixed flex-col space-y-5">
       <img class="w-50 h-14 my-10" src="https://github.com/Erixviii/sito-store/blob/main/src/images/logo.png?raw=true" alt="">
@@ -29,9 +38,30 @@
   <div id="destra" class="bg-aqua w-3/4 float-left">
     <nav class="py-14 fixed px-5">
       <b class="float-left pt-2">La tua collezione</b>
-      <button onclick="Exit()" class="rounded-full btn float-right w-12 h-11 mr-5 bg-neutral-800">E</button>
+      <button onclick="Popup()" class="rounded-full btn float-right w-12 h-11 mr-5 bg-neutral-800">E</button>
     </nav>
     <div id="prodotti" class="space-x-5 flex items-center flex-wrap px-28 text-center flex-row mt-40"></div>
+  
+  <div>
+  <table id="example2" class="example display" style="width:100%">
+    <thead>
+      <tr class="bg-black">
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Discount percentage</th>
+      <th>Rating</th>
+      <th>Stok</th>
+      <th>Brand</th>
+      <th>Category</th>
+      </tr>
+    </thead>
+    <tbody id="table_body">  
+    </tfoot>
+  </table>
   </div>
+</div>
+<script src="collezione_script.js"></script>
 </body>
 </html>
